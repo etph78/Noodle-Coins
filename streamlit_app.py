@@ -22,18 +22,18 @@ if submit:
     st.write(f'{url}')
 
 try:
-    df = pd.read_excel(url)
+    #df = pd.read_excel(url)
+    # Send a GET request
+    response = requests.get(url)
+    # Read the content of the response with pandas
+    df = pd.read_excel(io.BytesIO(response.content))
     st.write(f'The file was read correctly')
 except:
     df = pd.DataFrame()
     st.write(f'Error reading file')
 
 st.divider()
-# Send a GET request
-#response = requests.get(url)
 
-# Read the content of the response with pandas
-#df = pd.read_excel(io.BytesIO(response.content))
 st.write(f'XLSX Data:')
 st.write(df)
 
