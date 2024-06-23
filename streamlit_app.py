@@ -1,8 +1,19 @@
 import streamlit as st
 import pandas as pd
 
+st.title("✨ Noodle Coins app")
 
-st.title("📊 Data evaluation app")
+col1,col2 = st.columns([1,2])
+col1.title('Sum:')
+
+with st.form('addition'):
+    a = st.number_input('a')
+    b = st.number_input('b')
+    submit = st.form_submit_button('add')
+
+if submit:
+    col2.title(f'{a+b:.2f}')
+    
 
 st.write(
     "We are so glad to see you here. ✨ "
