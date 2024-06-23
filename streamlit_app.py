@@ -5,17 +5,20 @@ st.title("✨ Noodle Coins app")
 
 xlsx_file = 'https://www.bankhapoalim.co.il/sites/default/files/media/DohotKaspiem/120012411.xlsx'
 
-col1,col2 = st.columns([1,2])
-col1.title('File:')
+# col1,col2 = st.columns([1,2])
+# col1.title('File:')
 
-with st.form('addition'):
+with st.form('get_excel'):
     a = st.text_input('Copy Excel Link into Here')
     #b = st.text_input('b')
     submit = st.form_submit_button('Get Excel File')
 
 if submit:
     #col2.title(f'{xlsx_file}')
-    st.write(f'{xlsx_file}')
+    if a == '':
+        a = xlsx_file
+    st.write(f'Your Excel File is:')
+    st.write(f'{a}')
     
 st.divider()
 
