@@ -8,13 +8,6 @@ st.write(
     "We are so glad to see you here. ✨ "
 )
 
-st.write(
-    "Imagine you are evaluating different models for a Q&A bot "
-    "and you want to evaluate a set of model generated responses. "
-    "You have collected some user data. "
-    "Here is a sample question and response set."
-)
-
 data = {
     "Questions": [
         "Who invented the internet?",
