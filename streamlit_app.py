@@ -9,13 +9,14 @@ col1,col2 = st.columns([1,2])
 col1.title('File:')
 
 with st.form('addition'):
-    a = st.text_input('a')
-    b = st.text_input('b')
-    submit = st.form_submit_button('Read')
+    a = st.text_input('Copy Excel Link into Here')
+    #b = st.text_input('b')
+    submit = st.form_submit_button('Get Excel File')
 
 if submit:
-    col2.title(f'{xlsx_file}')
-
+    #col2.title(f'{xlsx_file}')
+    st.write(f'{xlsx_file}')
+    
 st.divider()
 
 
