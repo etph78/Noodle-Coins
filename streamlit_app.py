@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import requests
 
 st.title("✨ Noodle Coins app")
 
@@ -9,16 +10,16 @@ xlsx_file = 'https://www.bankhapoalim.co.il/sites/default/files/media/DohotKaspi
 # col1.title('File:')
 
 with st.form('get_excel'):
-    a = st.text_input('Copy Excel Link into Here')
+    url = st.text_input('Copy Excel Link into Here')
     #b = st.text_input('b')
     submit = st.form_submit_button('Get Excel File')
 
 if submit:
     #col2.title(f'{xlsx_file}')
-    if a == '':
-        a = xlsx_file
+    if url == '':
+        url = xlsx_file
     st.write(f'Your Excel File is:')
-    st.write(f'{a}')
+    st.write(f'{url}')
 
 try:
     df = pd.read_excel(url)
@@ -28,7 +29,11 @@ except:
     st.write(f'Error reading file')
 
 st.divider()
+# Send a GET request
+#response = requests.get(url)
 
+# Read the content of the response with pandas
+#df = pd.read_excel(io.BytesIO(response.content))
 st.write(f'XLSX Data:')
 st.write(df)
 
