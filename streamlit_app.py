@@ -20,16 +20,14 @@ if submit:
         url = xlsx_file
     st.write(f'Your Excel File is:')
     st.write(f'{url}')
+    
+st.divider()
 
 # Send a GET request
 response = requests.get(url)
-print(response.status_code)  # prints: 200
-print(response.headers)  # prints headers
-print(response.text)  # prints the content of the response
-
-st.write(f'response.status_code: {response.status_code}')
-st.write(f'response.headers: {response.headers}')
-st.write(f'response.text: {response.text}')
+st.write(f'response.status_code: {response.status_code}')  # prints: 200
+st.write(f'response.headers: {response.headers}')  # prints headers
+st.write(f'response.text: {response.text}')  # prints the content of the response
 
 if response.ok:
     try:
