@@ -19,7 +19,19 @@ if submit:
         a = xlsx_file
     st.write(f'Your Excel File is:')
     st.write(f'{a}')
-    
+
+try:
+    df = pd.read_excel(url)
+    st.write(f'The file was read correctly')
+except:
+    df = pd.DataFrame()
+    st.write(f'Error reading file')
+
+st.divider()
+
+st.write(f'XLSX Data:')
+st.write(df)
+
 st.divider()
 
 
