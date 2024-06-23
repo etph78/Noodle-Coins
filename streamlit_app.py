@@ -3,16 +3,18 @@ import pandas as pd
 
 st.title("✨ Noodle Coins app")
 
+xlsx_file = 'https://www.bankhapoalim.co.il/sites/default/files/media/DohotKaspiem/120012411.xlsx'
+
 col1,col2 = st.columns([1,2])
-col1.title('Sum:')
+col1.title('File:')
 
 with st.form('addition'):
-    a = st.number_input('a')
-    b = st.number_input('b')
-    submit = st.form_submit_button('add')
+    a = st.text_input('a')
+    b = st.text_input('b')
+    submit = st.form_submit_button('Read')
 
 if submit:
-    col2.title(f'{a+b:.2f}')
+    col2.title(f'{xlsx_file}')
 
 st.divider()
 
