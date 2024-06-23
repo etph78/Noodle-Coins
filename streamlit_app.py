@@ -21,10 +21,13 @@ if submit:
     st.write(f'Your Excel File is:')
     st.write(f'{url}')
 
+# Send a GET request
+response = requests.get(url)
+st.write(f'response Data:')
+st.write(response)
+
 try:
     #df = pd.read_excel(url)
-    # Send a GET request
-    response = requests.get(url)
     # Read the content of the response with pandas
     df = pd.read_excel(io.BytesIO(response.content))
     st.write(f'The file was read correctly')
