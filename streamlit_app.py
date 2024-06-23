@@ -23,6 +23,10 @@ if submit:
 
 # Send a GET request
 response = requests.get(url)
+print(response.status_code)  # prints: 200
+print(response.headers)  # prints headers
+print(response.text)  # prints the content of the response
+
 st.write(f'response Data:')
 st.write(response)
 
