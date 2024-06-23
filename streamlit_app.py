@@ -26,20 +26,35 @@ response = requests.get(url)
 st.write(f'response Data:')
 st.write(response)
 
-try:
-    #df = pd.read_excel(url)
-    # Read the content of the response with pandas
-    df = pd.read_excel(io.BytesIO(response.content))
-    st.write(f'The file was read correctly')
-except:
-    df = pd.DataFrame()
-    st.write(f'Error reading file')
+if response.ok:
+    try:
+        #df = pd.read_excel(url)
+        # Read the content of the response with pandas
+        df = pd.read_excel(io.BytesIO(response.content))
+        st.write(f'The file was read correctly')
+        
+    except:
+        df = pd.DataFrame()
+        st.write(f'Error - reading file')
+        data = {
+            "Questions": [0, 1, 2, 3],
+            "Answers": ['a', 'b', 'c', 'd',],
+        }
+        df = pd.DataFrame(data)
+else:
+    st.write(f'Error - Bad Response') 
+    data = {
+        "Questions": [0, 1, 2, 3],
+        "Answers": ['a', 'b', 'c', 'd',],
+    }    
+    df = pd.DataFrame(data)
 
 st.divider()
 
 st.write(f'XLSX Data:')
 st.write(df)
 
+st.divider()
 st.divider()
 
 
