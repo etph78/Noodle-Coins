@@ -30,7 +30,8 @@ if response.ok:
     try:
         #df = pd.read_excel(url)
         # Read the content of the response with pandas
-        df = pd.read_excel(io.BytesIO(response.content))
+        #df = pd.read_excel(io.BytesIO(response.content))
+        df = pd.read_excel(url)
         st.write(f'The file was read correctly')
         
     except:
