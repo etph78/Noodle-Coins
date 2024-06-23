@@ -13,7 +13,9 @@ with st.form('addition'):
 
 if submit:
     col2.title(f'{a+b:.2f}')
-    
+
+st.divider()
+
 
 st.write(
     "We are so glad to see you here. ✨ "
@@ -47,13 +49,6 @@ df = pd.DataFrame(data)
 
 st.write(df)
 
-st.write(
-    "Now I want to evaluate the responses from my model. "
-    "One way to achieve this is to use the very powerful `st.data_editor` feature. "
-    "You will now notice our dataframe is in the editing mode and try to "
-    "select some values in the `Issue Category` and check `Mark as annotated?` once finished 👇"
-)
-
 df["Issue"] = [True, True, True, False]
 df["Category"] = ["Accuracy", "Accuracy", "Completeness", ""]
 
@@ -72,12 +67,8 @@ new_df = st.data_editor(
     },
 )
 
-st.write(
-    "You will notice that we changed our dataframe and added new data. "
-    "Now it is time to visualize what we have annotated!"
-)
 
-st.divider()
+
 
 st.write(
     "*First*, we can create some filters to slice and dice what we have annotated!"
