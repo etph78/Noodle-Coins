@@ -9,6 +9,11 @@ st.title("✨ Noodle Coins app")
 # xlsx_file_init = r'https://www.bankhapoalim.co.il/sites/default/files/media/DohotKaspiem/120012411.xlsx'
 xlsx_file_init = r'C:\Users\e025553\OneDrive - Elbit Systems 365\Desktop\FIKI Analysis\Radius.xlsx'
 # xlsx_file_init = 'https://noodle-coins.streamlit.app/'
+data = {
+    "Questions": [0, 1, 2, 3],
+    "Answers": ['a', 'b', 'c', 'd',],
+}    
+df = pd.DataFrame(data)
 
 # col1,col2 = st.columns([1,2])
 # col1.title('File:')
@@ -46,16 +51,6 @@ if submit:
             df = pd.DataFrame(data)
     else:
         st.write(f'Error - Bad Response') 
-        data = {
-            "Questions": [0, 1, 2, 3],
-            "Answers": ['a', 'b', 'c', 'd',],
-        }    
-        df = pd.DataFrame(data)
-
-st.divider()
-
-
-
 
 
 st.divider()
@@ -64,21 +59,12 @@ st.write(f'XLSX Data:')
 st.write(df)
 
 st.divider()
-st.divider()
 
 
 st.write(
     "We are so glad to see you here. ✨ "
 )
 
-data = {
-    "Questions": [0, 1, 2, 3],
-    "Answers": ['a', 'b', 'c', 'd',],
-}
-
-df = pd.DataFrame(data)
-
-st.write(df)
 
 df["Issue"] = [True, True, True, False]
 df["Category"] = ["Accuracy", "Accuracy", "Completeness", ""]
