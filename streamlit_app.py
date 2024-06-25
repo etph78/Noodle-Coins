@@ -34,10 +34,9 @@ if submit:
             #df = pd.read_excel(io.BytesIO(response.content))
             df = pd.read_excel(url)
             st.write(f'The file was read correctly')
-            
-        except:
+        except Exception as e:
+            st.write(f'Error: {e}')
             df = pd.DataFrame()
-            st.write(f'Error - reading file')
             data = {
                 "Questions": [0, 1, 2, 3],
                 "Answers": ['a', 'b', 'c', 'd',],
