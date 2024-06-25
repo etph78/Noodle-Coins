@@ -4,11 +4,12 @@ import requests
 
 st.title("✨ Noodle Coins app")
 
-xlsx_file = 'https://www.bankhapoalim.co.il/sites/default/files/media/DohotKaspiem/120012411.xlsx'
+# xlsx_file = 'https://www.bankhapoalim.co.il/sites/default/files/media/DohotKaspiem/120012411.xlsx'
+xlsx_file_init = 'https://'
 
 # col1,col2 = st.columns([1,2])
 # col1.title('File:')
-
+url = ''
 with st.form('get_excel'):
     url = st.text_input('Copy Excel Link into Here')
     #b = st.text_input('b')
@@ -16,7 +17,7 @@ with st.form('get_excel'):
 
 if submit:
     #col2.title(f'{xlsx_file}')
-    if url == 'https://':
+    if url == '':
         url = xlsx_file
     st.write(f'Your Excel File is:')
     st.write(f'{url}')
