@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import requests
 import openpyxl
+from io import BytesIO
 
 st.title("✨ Noodle Coins app")
 
@@ -30,9 +31,8 @@ if submit:
     
     if response.ok:
         try:
-            #df = pd.read_excel(url)
             # Read the content of the response with pandas
-            df = pd.read_excel(io.BytesIO(response.content), engine='openpyxl')
+            df = pd.read_excel(io.BytesIO(response.content))
             # df = pd.read_excel(url, engine='openpyxl')
             st.write(f'The file was read correctly')
         except Exception as e:
