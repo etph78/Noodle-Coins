@@ -18,7 +18,7 @@ with st.form('get_excel'):
 if submit:
     #col2.title(f'{xlsx_file}')
     if url == '':
-        url = xlsx_file
+        url = xlsx_file_init
     st.write(f'Your Excel File is:')
     st.write(f'{url}')
     
