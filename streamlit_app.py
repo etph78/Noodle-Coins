@@ -32,7 +32,7 @@ if submit:
             #df = pd.read_excel(url)
             # Read the content of the response with pandas
             #df = pd.read_excel(io.BytesIO(response.content))
-            df = pd.read_excel(url)
+            df = pd.read_excel(url, engine='openpyxl')
             st.write(f'The file was read correctly')
         except Exception as e:
             st.write(f'Error: {e}')
