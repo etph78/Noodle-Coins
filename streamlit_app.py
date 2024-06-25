@@ -6,8 +6,7 @@ from io import BytesIO
 
 st.title("✨ Noodle Coins app")
 
-# xlsx_file_init = 'https://www.bankhapoalim.co.il/sites/default/files/media/DohotKaspiem/120012411.xlsx'
-xlsx_file_init = 'http://example.com/path/to/your/excel/file.xlsx'
+xlsx_file_init = 'https://www.bankhapoalim.co.il/sites/default/files/media/DohotKaspiem/120012411.xlsx'
 # xlsx_file_init = 'https://noodle-coins.streamlit.app/'
 
 # col1,col2 = st.columns([1,2])
@@ -33,8 +32,8 @@ if submit:
     if response.ok:
         try:
             # Read the content of the response with pandas
-            df = pd.read_excel(BytesIO(response.content), engine='openpyxl')
-            # df = pd.read_excel(url, engine='openpyxl')
+            # df = pd.read_excel(BytesIO(response.content), engine='openpyxl')
+            df = pd.read_excel(url, engine='openpyxl')
             st.write(f'The file was read correctly')
         except Exception as e:
             st.write(f'Error: {e}')
