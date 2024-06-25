@@ -7,7 +7,7 @@ from io import BytesIO
 st.title("✨ Noodle Coins app")
 
 # xlsx_file_init = r'https://www.bankhapoalim.co.il/sites/default/files/media/DohotKaspiem/120012411.xlsx'
-xlsx_file_init = r'C:\Temp\to_delete\\-.xlsx'
+xlsx_file_init = r'C:\Temp\to_delete\-.xlsx'
 # xlsx_file_init = 'https://noodle-coins.streamlit.app/'
 data = {
     "Questions": [0, 1, 2, 3],
