@@ -4,8 +4,8 @@ import requests
 
 st.title("✨ Noodle Coins app")
 
-# xlsx_file = 'https://www.bankhapoalim.co.il/sites/default/files/media/DohotKaspiem/120012411.xlsx'
-xlsx_file_init = 'https://noodle-coins.streamlit.app/'
+xlsx_file = 'https://www.bankhapoalim.co.il/sites/default/files/media/DohotKaspiem/120012411.xlsx'
+# xlsx_file_init = 'https://noodle-coins.streamlit.app/'
 
 # col1,col2 = st.columns([1,2])
 # col1.title('File:')
