@@ -26,8 +26,8 @@ st.divider()
 # Send a GET request
 response = requests.get(url)
 st.write(f'response.status_code: {response.status_code}')  # prints: 200
-st.write(f'response.headers: {response.headers}')  # prints headers
-st.write(f'response.text: {response.text}')  # prints the content of the response
+# st.write(f'response.headers: {response.headers}')  # prints headers
+# st.write(f'response.text: {response.text}')  # prints the content of the response
 
 if response.ok:
     try:
