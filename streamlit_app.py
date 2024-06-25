@@ -6,7 +6,8 @@ from io import BytesIO
 
 st.title("✨ Noodle Coins app")
 
-xlsx_file_init = 'https://www.bankhapoalim.co.il/sites/default/files/media/DohotKaspiem/120012411.xlsx'
+# xlsx_file_init = 'https://www.bankhapoalim.co.il/sites/default/files/media/DohotKaspiem/120012411.xlsx'
+xlsx_file_init = 'http://example.com/path/to/your/excel/file.xlsx'
 # xlsx_file_init = 'https://noodle-coins.streamlit.app/'
 
 # col1,col2 = st.columns([1,2])
