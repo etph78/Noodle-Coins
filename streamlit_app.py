@@ -35,23 +35,36 @@ if submit:
     # st.write(f'response.headers: {response.headers}')  # prints headers
     # st.write(f'response.text: {response.text}')  # prints the content of the response 
     
-    if response.ok:
-        try:
-            # Read the content of the response with pandas
-            # df = pd.read_excel(BytesIO(response.content), engine='openpyxl')
-            df = pd.read_excel(url, engine='openpyxl')
-            st.write(f'The file was read correctly')
-        except Exception as e:
-            st.write(f'Error: {e}')
-            df = pd.DataFrame()
-            data = {
-                "Questions": [0, 1, 2, 3],
-                "Answers": ['a', 'b', 'c', 'd',],
-            }
-            df = pd.DataFrame(data)
-    else:
-        st.write(f'Error - Bad Response') 
-
+    # if response.ok:
+    #     try:
+    #         # Read the content of the response with pandas
+    #         # df = pd.read_excel(BytesIO(response.content), engine='openpyxl')
+    #         df = pd.read_excel(url, engine='openpyxl')
+    #         st.write(f'The file was read correctly')
+    #     except Exception as e:
+    #         st.write(f'Error: {e}')
+    #         df = pd.DataFrame()
+    #         data = {
+    #             "Questions": [0, 1, 2, 3],
+    #             "Answers": ['a', 'b', 'c', 'd',],
+    #         }
+    #         df = pd.DataFrame(data)
+    # else:
+    #     st.write(f'Error - Bad Response') 
+        
+    try:
+        # Read the content of the response with pandas
+        # df = pd.read_excel(BytesIO(response.content), engine='openpyxl')
+        df = pd.read_excel(url, engine='openpyxl')
+        st.write(f'The file was read correctly')
+    except Exception as e:
+        st.write(f'Error: {e}')
+        df = pd.DataFrame()
+        data = {
+            "Questions": [0, 1, 2, 3],
+            "Answers": ['a', 'b', 'c', 'd',],
+        }
+        df = pd.DataFrame(data)
 
 st.divider()
 
