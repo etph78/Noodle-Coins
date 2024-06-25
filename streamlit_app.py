@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import requests
+import openpyxl
 
 st.title("✨ Noodle Coins app")
 
