@@ -24,35 +24,38 @@ if submit:
     # Send a GET request
     response = requests.get(url)
     st.write(f'response.status_code: {response.status_code}')  # prints: 200
+    # st.write(f'response.headers: {response.headers}')  # prints headers
+    # st.write(f'response.text: {response.text}')  # prints the content of the response 
     
-st.divider()
-
-# st.write(f'response.headers: {response.headers}')  # prints headers
-# st.write(f'response.text: {response.text}')  # prints the content of the response
-
-if response.ok:
-    try:
-        #df = pd.read_excel(url)
-        # Read the content of the response with pandas
-        #df = pd.read_excel(io.BytesIO(response.content))
-        df = pd.read_excel(url)
-        st.write(f'The file was read correctly')
-        
-    except:
-        df = pd.DataFrame()
-        st.write(f'Error - reading file')
+    if response.ok:
+        try:
+            #df = pd.read_excel(url)
+            # Read the content of the response with pandas
+            #df = pd.read_excel(io.BytesIO(response.content))
+            df = pd.read_excel(url)
+            st.write(f'The file was read correctly')
+            
+        except:
+            df = pd.DataFrame()
+            st.write(f'Error - reading file')
+            data = {
+                "Questions": [0, 1, 2, 3],
+                "Answers": ['a', 'b', 'c', 'd',],
+            }
+            df = pd.DataFrame(data)
+    else:
+        st.write(f'Error - Bad Response') 
         data = {
             "Questions": [0, 1, 2, 3],
             "Answers": ['a', 'b', 'c', 'd',],
-        }
+        }    
         df = pd.DataFrame(data)
-else:
-    st.write(f'Error - Bad Response') 
-    data = {
-        "Questions": [0, 1, 2, 3],
-        "Answers": ['a', 'b', 'c', 'd',],
-    }    
-    df = pd.DataFrame(data)
+
+st.divider()
+
+
+
+
 
 st.divider()
 
